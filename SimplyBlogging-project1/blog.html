@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body style="color:darkolivegreen;" background="tree6.jpg" >
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html"> O₂</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-4">
+              <a style="color:darkolivegreen;" class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active nav-item mx-4">
+              <a style="color:darkseagreen" class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item mx-4">
+                <a style="color:darkolivegreen;" class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item mx-4">
+                <a style="color:darkolivegreen;" class="nav-link" href="about.html">About</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container mt-4">
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+              <h1 style="color: darkseagreen;" class="display-4 font-italic">Welcome to  O₂  blog</h1>
+              <p style="color: darkseagreen;" class="lead my-3">Your favorite blog source for x y and z.</p>
+            </div>
+          </div>
+          
+          <div class="container px-0">
+            <div class="card">
+                <div class="card-body">
+                <h4>Make a blog post</h4>
+                <div class="form-group">
+                    <label for="titleInput">Title</label>
+                    <input type="text" class="form-control" id="titleInput" placeholder="Enter a Title">
+                </div>
+                <div id="titleErr" class="alert alert-danger" style="display:none" role="alert">Please add a title to your post</div>
+                
+                <div class="form-group">
+                    <label for="textInput">Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text"></textarea>
+                </div>
+                <div id="textErr" class="alert alert-danger" style="display:none" role="alert">Please add some text to your post</div>
+                <button id="blogSubmit" onclick="blogSubmit()" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+            </div>
+
+            <br>
+            <div id="blogPosts">
+            <br>
+
+
+
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body">
+                <div class="row title-row">
+                  <div class="col-4"><h1 class="blogTitle">A Plant’s Journey Home</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by Mark <br/><br/>
+              <p class="blogText">Ever wonder how a houseplant makes it safely from our greenhouse to your door? Follow along as this Bird of Paradise is hand-picked, carefully packaged, and shipped to its new home. This is the journey of a  plant. From our greenhouse straight to your house.
+
+                Once we receive your order, our greenhouse team picks out the perfect plant. But that’s just the first part of your plant’s journey.
+                
+                Now onto our fulfillment center. Where your new plant is repotted into a recycled, plastic Ecopot, filled with our custom blend of nutrient-rich soil. Every leaf of your plant is inspected and meticulously wiped clean.
+                
+                Then we carefully prepare it for the journey to you, inside our patented packaging system.
+                
+                Home at last. We call it “Living Room Ready,” 
+                
+                (o₂) . It starts with a better plant.</p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+
+            <div class="singlePost">
+            <br>
+            <div class="card">
+            <div class="card-body">
+              <div class="row title-row">
+                <div style="color: darkolivegreen;" class="col-4"><h1 class="blogTitle"> Some Tips For Keeping Houseplants Happy</h1></div>
+                <div class="col-4"></div>
+                <div class="col-2"></div>
+                <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+              </div>
+            
+            <i class="text-muted">by John </i><br/><br/>
+            <p class="blogText">First thing’s first – choose the right plants for your home. For example, if you have very little natural light, cacti and succulents will suffer after time, and let me tell you, there’s nothing worse that binning a mouldy little cactus. Most tropical plants need watering around once a week, so don’t choose exotic leafy species if you don’t think you can offer them the attention they need to survive.
+              That said, if you’d like to start with some foolproof species that will forgive you when you’re bad, try the spider plant Chlorophytum comosum, snake plant Sansevieria trifasciata, cast iron plant Aspidistra elatior or species of forest cacti such as the fishbone cactus.
+              Tip number 2 – drainage, drainage, and drainage! This is so important, especially for desert plants such as cacti and succulents, which are used to spending most of their time in very dry conditions with sporadic rainfall. Waterlogged soil will cause a plant’s roots to weaken and encourage bacteria to grow, and will not make for a happy looking plant. Either choose a pot with a drainage hole and tray, which can be emptied a few hours after watering, or use the pot-within-a-pot method, making sure the inner plastic pot is elevated on a bed of stones to prevent any excess moisture sitting around the plant’s roots.
+              Finally, make sure to repot your plants when necessary in the spring or summer, when houseplants generally become more active. You can tell if it is time to repot a houseplant by carefully turning the plant upside down (you can find out more about how best to do this – hello cactus spines – in our book!), releasing the plant from its pot and seeing it the roots are visible at the edges of the soil. For those plants that need space for their roots to develop, repotting every few years ensures they don’t become unhealthily crowded, and provides them with fresh nutrients to bloom.
+             So there you have it…now you have no excuses when it comes to looking after the plants in your home and there’s frankly nothing sadder than a mouldy cactus as Caro so eloquently puts it. Thanks for coming along girls and sharing your advice…now if you’ll excuse me I’m off to pin some of those beautiful images and purchase a plant or two for the hall table. I have to say prior to seeing the House of Plants book I was guilty for thinking that houseplants were a bit ‘granny’ but Rose and Caro have proved me wrong.</p>
+
+            
+
+
+              <div class="editForm" style="display:none">
+              <h4>Edit this blog post</h4>
+              <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+              </div>
+              
+              <div class="form-group">
+                  <label>Text</label>
+                  <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+              </div>
+
+              <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+            </div>
+            </div>    
+            </div>
+            </div>
+
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body">
+                <div class="row title-row">
+                  <div style="color: darkolivegreen;" class="col-4"><h1 class="blogTitle">CARE GUIDE FOR BUDDLEIAS</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by Alex </i><br/><br/>
+              <p class="blogText">Plant buddleias from late spring, as soon as the soil has had a chance to warm up. Container-grown plants can be planted right up to early autumn.
+                Buddleias perform best in a sunny position in well-drained soil, although will tolerate most conditions apart from wet, heavy clay.
+                Mulch with manure in autumn or add a general-purpose fertiliser in late spring to improve the number of flowers.
+                Deadhead buddleia as the flowers fade to encourage a continuous supply of flower. Take off every spent flower at the end of the year to prevent unwanted seedlings.</p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+            </div>
+            
+          </div>
+          <br/><br/><br/><br/>
+      </div>
+
+
+
+
+    <script src="./blog.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
